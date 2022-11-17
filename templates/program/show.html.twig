@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}programme{{id}}{% endblock %}
+{% block title %}{{program.title}}{% endblock %}
 
 {% block body %}
-<h1>programme {{id}}</h1>
+<h1>{{program.title}}</h1>
+<p>Synopsis : {{program.synopsis}}</p>
+<p>Poster :{{program.poster}}</p>
+<p>Category :{{program.category.name}}</p>
+<br><br>
+
 <img src="{{ asset('build/images/SecretCellarLogo.png') }}" alt=""/>
+
 {% endblock %}
