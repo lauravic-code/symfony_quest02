@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{program.title}} - Saison :{{season.number}}{% endblock %}
+
+{% block body %}
+<h1>{{program.title}}</h1>
+<p>Synopsis : {{program.synopsis}}</p>
+<p>Poster :{{program.poster}}</p>
+<p>Category :{{program.category.name}}</p>
+<br>
+<h2>Season : </h2>
+<p>Year : {{season.year}}</p>
+<p>Description :{{season.description}}</p>
+
+<h2>Episodes : </h2>
+{% for episode in episodes %}
+   {{episode.title}}<br>
+    {{episode.number}}<br>
+    {{episode.synopsis}}<br>
+{% endfor %}
+
+
+
+</p>
+
+<br><br>
+
+<img src="{{ asset('build/images/SecretCellarLogo.png') }}" alt=""/>
+
+{% endblock %}

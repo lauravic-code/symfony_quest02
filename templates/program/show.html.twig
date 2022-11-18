@@ -7,6 +7,12 @@
 <p>Synopsis : {{program.synopsis}}</p>
 <p>Poster :{{program.poster}}</p>
 <p>Category :{{program.category.name}}</p>
+<p>Season :
+{% for season in seasons %}
+    <a href="{{ path("program_season_show", { seasonId: season.id },{ programId: program.id }) }}"><li>ma saison :{{season.number}}<br> id saison :{{season.id}}<br> id pgrm :{{program.id}}</li></a>
+{% endfor %}
+</p>
+
 <br><br>
 
 <img src="{{ asset('build/images/SecretCellarLogo.png') }}" alt=""/>

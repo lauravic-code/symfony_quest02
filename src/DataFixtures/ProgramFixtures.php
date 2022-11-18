@@ -13,141 +13,189 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         ['title'=>'Friends',
          'synopsis'=>'Les péripéties de 6 jeunes New-Yorkais ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Action'
+         'category'=>'Action',
+         'year'=>'2002',
+         'country'=>'USA'
         ],
 
         ['title'=>'Breaking Bad',
          'synopsis'=>'La vie de Walter White, professeur de chimie dans un lycée.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Aventure'
+         'category'=>'Aventure',
+         'year'=>'1992',
+         'country'=>'France'
         ],
 
         ['title'=>'X-Files',
          'synopsis'=>'Les agents spéciaux du FBI Fox Mulder et Dana Scully sont les enquêteurs de dossiers classés X ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Fantastique'
+         'category'=>'Fantastique',
+         'year'=>'2002',
+         'country'=>'Chine'
         ],
 
         ['title'=>'Game of Thrones',
          'synopsis'=>'Il y a très longtemps, à une époque oubliée, une force a détruit l\'équilibre des saisons.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'1992',
+         'country'=>'USA'
         ],
 
         ['title'=>'Seinfeld',
          'synopsis'=>'Dans son propre rôle de comique, le bavard Jerry Seinfeld mène une vie qui ne le gâte pas tout le temps, notamment à cause des femmes.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Horreur'
+         'category'=>'Horreur',
+         'year'=>'1995',
+         'country'=>'USA'
         ],
         ['title'=>'Les Soprano',
          'synopsis'=>'Chef de la mafia et père de famille, Tony Soprano confie ses angoisses au Dr Jennifer Melfi, son psychiatre.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'2002',
+         'country'=>'Angleterre'
         ],
         ['title'=>'Friends',
          'synopsis'=>'Les péripéties de 6 jeunes New-Yorkais ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Action'
+         'category'=>'Action',
+         'year'=>'1997',
+         'country'=>'USA'
         ],
 
         ['title'=>'Breaking Bad',
          'synopsis'=>'La vie de Walter White, professeur de chimie dans un lycée.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Aventure'
+         'category'=>'Aventure',
+         'year'=>'2003',
+         'country'=>'France'
         ],
 
         ['title'=>'X-Files',
          'synopsis'=>'Les agents spéciaux du FBI Fox Mulder et Dana Scully sont les enquêteurs de dossiers classés X ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Fantastique'
+         'category'=>'Fantastique',
+         'year'=>'1983',
+         'country'=>'USA'
         ],
 
         ['title'=>'Game of Thrones',
          'synopsis'=>'Il y a très longtemps, à une époque oubliée, une force a détruit l\'équilibre des saisons.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'1984',
+         'country'=>'Japon'
         ],
 
         ['title'=>'Seinfeld',
          'synopsis'=>'Dans son propre rôle de comique, le bavard Jerry Seinfeld mène une vie qui ne le gâte pas tout le temps, notamment à cause des femmes.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Horreur'
+         'category'=>'Horreur',
+         'year'=>'2002',
+         'country'=>'USA'
         ],
         ['title'=>'Les Soprano',
          'synopsis'=>'Chef de la mafia et père de famille, Tony Soprano confie ses angoisses au Dr Jennifer Melfi, son psychiatre.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'1993',
+         'country'=>'France'
         ],
         ['title'=>'Friends',
          'synopsis'=>'Les péripéties de 6 jeunes New-Yorkais ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Action'
+         'category'=>'Action',
+         'year'=>'2006',
+         'country'=>'Japon'
         ],
 
         ['title'=>'Breaking Bad',
          'synopsis'=>'La vie de Walter White, professeur de chimie dans un lycée.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Aventure'
+         'category'=>'Aventure',
+         'year'=>'1996',
+         'country'=>'USA'
         ],
 
         ['title'=>'X-Files',
          'synopsis'=>'Les agents spéciaux du FBI Fox Mulder et Dana Scully sont les enquêteurs de dossiers classés X ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Fantastique'
+         'category'=>'Fantastique',
+         'year'=>'2010',
+         'country'=>'Espagne'
         ],
 
         ['title'=>'Game of Thrones',
          'synopsis'=>'Il y a très longtemps, à une époque oubliée, une force a détruit l\'équilibre des saisons.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'1952',
+         'country'=>'France'
         ],
 
         ['title'=>'Seinfeld',
          'synopsis'=>'Dans son propre rôle de comique, le bavard Jerry Seinfeld mène une vie qui ne le gâte pas tout le temps, notamment à cause des femmes.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Horreur'
+         'category'=>'Horreur',
+         'year'=>'2013',
+         'country'=>'France'
         ],
         ['title'=>'Les Soprano',
          'synopsis'=>'Chef de la mafia et père de famille, Tony Soprano confie ses angoisses au Dr Jennifer Melfi, son psychiatre.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'1954',
+         'country'=>'Chine'
         ],
         ['title'=>'Friends',
          'synopsis'=>'Les péripéties de 6 jeunes New-Yorkais ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Action'
+         'category'=>'Action',
+         'year'=>'2005',
+         'country'=>'Allemagne'
         ],
 
         ['title'=>'Breaking Bad',
          'synopsis'=>'La vie de Walter White, professeur de chimie dans un lycée.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Aventure'
+         'category'=>'Aventure',
+         'year'=>'2015',
+         'country'=>'France'
         ],
 
         ['title'=>'X-Files',
          'synopsis'=>'Les agents spéciaux du FBI Fox Mulder et Dana Scully sont les enquêteurs de dossiers classés X ',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Fantastique'
+         'category'=>'Fantastique',
+         'year'=>'2001',
+         'country'=>'USA'
         ],
 
         ['title'=>'Game of Thrones',
          'synopsis'=>'Il y a très longtemps, à une époque oubliée, une force a détruit l\'équilibre des saisons.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'1967',
+         'country'=>'France'
         ],
 
         ['title'=>'Seinfeld',
          'synopsis'=>'Dans son propre rôle de comique, le bavard Jerry Seinfeld mène une vie qui ne le gâte pas tout le temps, notamment à cause des femmes.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Horreur'
+         'category'=>'Horreur',
+         'year'=>'2002',
+         'country'=>'Espagne'
         ],
         ['title'=>'Les Soprano',
          'synopsis'=>'Chef de la mafia et père de famille, Tony Soprano confie ses angoisses au Dr Jennifer Melfi, son psychiatre.',
          'poster'=>'blablabla.jpeg',
-         'category'=>'Animation'
+         'category'=>'Animation',
+         'year'=>'2009',
+         'country'=>'Allemagne'
          ]
     ];
-    
+
     public function load(ObjectManager $manager)
     {
         foreach(self::PROGRAMS as $keys=>$serie){
@@ -155,6 +203,8 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program->setTitle($serie['title']);
             $program->setSynopsis($serie['synopsis']);
             $program->setPoster($serie['poster']);
+            $program->setCountry($serie['country']);
+            $program->setYear($serie['year']);
             $program->setCategory($this->getReference('category_'.$serie['category']));
             $manager->persist($program);
             }
