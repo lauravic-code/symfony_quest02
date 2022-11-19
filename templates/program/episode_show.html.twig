@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Saison :{{season.number}} - Episode :{{episode.number}}{% endblock %}
+
+{% block body %}
+<h1>{{program.title}} - Saison :{{season.number}} - Episode :{{episode.number}}</h1>
+<p>Titre épisode :{{episode.title}}</p>
+<p>Synopsis : {{episode.synopsis}}</p>
+
+
+<img src="{{ asset('build/images/SecretCellarLogo.png') }}" alt=""/>
+
+{% endblock %}
