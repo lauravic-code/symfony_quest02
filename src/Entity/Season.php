@@ -27,9 +27,9 @@ class Season
 
     #[ORM\ManyToOne(inversedBy: 'seasons')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?program $program = null;
+    private ?Program $program = null;
 
-    #[ORM\OneToMany(mappedBy: 'season', targetEntity: Episode::class)]
+    #[ORM\OneToMany(orphanRemoval : true,mappedBy: 'season', targetEntity: Episode::class)]
     private Collection $episodes;
 
     public function __construct()
@@ -78,12 +78,12 @@ class Season
         return $this;
     }
 
-    public function getProgram(): ?program
+    public function getProgram(): ?Program
     {
         return $this->program;
     }
 
-    public function setProgram(?program $program): self
+    public function setProgram(?Program $program): self
     {
         $this->program = $program;
 
