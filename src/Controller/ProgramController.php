@@ -5,11 +5,13 @@ namespace App\Controller;
 use App\Entity\Program;
 use App\Entity\Season;
 use App\Entity\Episode;
+use App\Form\ProgramType;
 use App\Repository\ProgramRepository;
 use App\Repository\SeasonRepository;
 use App\Repository\EpisodeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Component\Routing\Annotation\Route;
 #[Route('/program', name: 'program_')]
@@ -26,6 +28,32 @@ class ProgramController extends AbstractController
         );
     }
 
+    #[Route('/new', name: 'new')]
+    public function new(Request $request): Response
+    {
+        $program = new Program();
+
+        // Create the form, linked with $program
+        $form = $this->createForm(ProgramType::class, $program);
+
+         // Get data from HTTP request
+        $form->handleRequest($request);
+        // Was the form submitted ?
+        if ($form->isSubmitted()) {
+            // Deal with the submitted data
+            $programRepository->save($program, true); 
+            // For example : persiste & flush the entity
+            // And redirect to a route that display the result
+            return $this->redirectToRoute('program_index');
+    }
+        
+        // Render the form (best practice)
+        return $this->renderForm('program/new.html.twig', [
+            'form' => $form,
+        ]);
+    }
+
+
 
     #[Route('/show/{id}', methods: ['GET'], requirements: ['id'=>'\d+'], name: 'show')]
     public function show(Program $program, ProgramRepository $programRepository, int $id=4):Response
@@ -41,6 +69,7 @@ class ProgramController extends AbstractController
         return $this->render('program/show.html.twig', ['program' =>$program, 'seasons'=>$seasons ]);
         
     }
+    
 
     #[Route('/{program}/seasons/{season}', methods: ['GET'], requirements: ['id'=>'\d+'], name: 'season_show')]
     public function showSeason(Program $program, Season $season,ProgramRepository $programRepository,EpisodeRepository $episodeRepository,SeasonRepository $seasonRepository )
