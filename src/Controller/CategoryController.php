@@ -24,7 +24,7 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/new', name: 'new')]
-    public function new(Request $request): Response
+    public function new(Request $request, CategoryRepository $categoryRepository): Response
     {
         $category = new Category();
 
@@ -34,7 +34,7 @@ class CategoryController extends AbstractController
          // Get data from HTTP request
         $form->handleRequest($request);
         // Was the form submitted ?
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted()&& $form->isValid()) {
         // Deal with the submitted data
         $categoryRepository->save($category, true); 
         // For example : persiste & flush the entity
