@@ -16,54 +16,39 @@ use Faker\Factory;
 
 class SeasonFixtures extends Fixture implements DependentFixtureInterface
 {
-
-//     public $allSeasons;
-    
-    
-// public function getAllSeason(): Collection
-//     {   $this->allSeasons= [];
-//         return $this->allSeasons;
-//     }
-
-//     public function setAllSeason($value): Collection
-//     {
-//         $table=$this->getAllSeason();
-//         $table=array_push($table,$value);
-//         return $table;
-//     }
+    public const SEASON_PER_PROGRAM= 5;
+    public const PREFIX ="season_";
     
     public function load(ObjectManager $manager){
         //Puis ici nous demandons à la Factory de nous fournir un Faker
         $faker = Factory::create();
-        $programFixtures = new ProgramFixtures();
         /**
         * L'objet $faker que tu récupère est l'outil qui va te permettre 
         * de te générer toutes les données que tu souhaites
         */
-        foreach($programFixtures::PROGRAMS as $serie) {
-            $serieName=$serie['title'];
-            
-                for($i = 0; $i < 5; $i++) {
+        for($i=0; $i<ProgramFixtures::TOTAL_FIXTURES; $i++) {
+            $program=$this->getReference(ProgramFixtures::PREFIX.$i);
+                for($j = 0; $j < self::SEASON_PER_PROGRAM; $j++) {
                     $season = new Season();
                     //Ce Faker va nous permettre d'alimenter l'instance de Season que l'on souhaite ajouter en base
-                    $season->setNumber($faker->numberBetween(1, 10));
+                    $season->setNumber($j+1);
                     $season->setYear($faker->year());
                     $season->setDescription($faker->paragraphs(3, true));
-                    $this->addReference('season_' . $i.'_'.$serieName, $season);
-                    $season->setProgram($this->getReference('program_'.$serie['title']));
-                   
+                    $season->setProgram($program);
                     $manager->persist($season);
+                    $this->addReference(ProgramFixtures::PREFIX . $i.'_'.self::PREFIX. $j, $season);
+                   
 
-                        for($j = 0; $j<10; $j++){
-                            $episode = new Episode();
-                            //Ce Faker va nous permettre d'alimenter l'instance de episode que l'on souhaite ajouter en base
-                            $episode->setNumber($faker->numberBetween(1, 10));
-                            $episode->setTitle($faker->sentence($faker->numberBetween(3, 7)));
-                            $episode->setSynopsis($faker->paragraphs(3, true));
-                            $episode->setSeason($this->getReference('season_' . $i.'_'.$serieName));
+                        // for($j = 0; $j<10; $j++){
+                        //     $episode = new Episode();
+                        //     //Ce Faker va nous permettre d'alimenter l'instance de episode que l'on souhaite ajouter en base
+                        //     $episode->setNumber($faker->numberBetween(1, 10));
+                        //     $episode->setTitle($faker->sentence($faker->numberBetween(3, 7)));
+                        //     $episode->setSynopsis($faker->paragraphs(3, true));
+                        //     $episode->setSeason($this->getReference('season_' . $i.'_'.$serieName));
             
-                            $manager->persist($episode);
-                        }
+                        //     $manager->persist($episode);
+                        // }
                 }
              $manager->flush();
         }
@@ -74,6 +59,7 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
            ProgramFixtures::class,
+           CategoryFixtures::class,
         ];
     }
 }
