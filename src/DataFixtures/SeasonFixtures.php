@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Season;
-use App\Entity\Episode;
 use App\DataFixtures\ProgramFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -37,18 +36,7 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
                     $season->setProgram($program);
                     $manager->persist($season);
                     $this->addReference(ProgramFixtures::PREFIX . $i.'_'.self::PREFIX. $j, $season);
-                   
-
-                        // for($j = 0; $j<10; $j++){
-                        //     $episode = new Episode();
-                        //     //Ce Faker va nous permettre d'alimenter l'instance de episode que l'on souhaite ajouter en base
-                        //     $episode->setNumber($faker->numberBetween(1, 10));
-                        //     $episode->setTitle($faker->sentence($faker->numberBetween(3, 7)));
-                        //     $episode->setSynopsis($faker->paragraphs(3, true));
-                        //     $episode->setSeason($this->getReference('season_' . $i.'_'.$serieName));
-            
-                        //     $manager->persist($episode);
-                        // }
+                
                 }
              $manager->flush();
         }
@@ -58,7 +46,7 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies(): array
     {
         return [
-           ProgramFixtures::class,
+           ProgramFixtures::class, 
            CategoryFixtures::class,
         ];
     }
